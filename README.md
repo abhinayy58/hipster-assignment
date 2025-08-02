@@ -18,7 +18,7 @@ This is a minimal and production-ready React application using **TypeScript**, *
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/hipster-assignment.git
+git clone https://github.com/abhinayy58/hipster-assignment.git
 
 # Install dependencies
 cd hipster-assignment
@@ -33,39 +33,3 @@ npm run build
 # Preview production build
 npm run preview
 
-
-// eslint.config.js
-import js from '@eslint/js';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
-import { globalIgnores } from 'eslint/config';
-
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      ...tseslint.configs.recommendedTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-      reactX.configs['recommended-typescript'],
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      ecmaVersion: 'latest',
-      globals: globals.browser,
-      parserOptions: {
-        project: ['./tsconfig.app.json', './tsconfig.node.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  },
-]);
-
-
-
----
-
-Would you like me to generate this as a downloadable `README.md` file or help push it to GitHub with your project?
