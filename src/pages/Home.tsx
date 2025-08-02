@@ -1,16 +1,9 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  category: string;
-  description: string;
-}
+import  ProductType from "../types/productTypes";;
 
 const Home = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState(false);
   console.log(products);
 
@@ -20,7 +13,7 @@ const Home = () => {
 
       const response = await fetch("https://fakestoreapi.com/products");
       const result = await response.json();
-      const products: Product[] = result;
+      const products: ProductType[] = result;
       setProducts(products);
     } catch (error) {
       console.error("Error fetching products:", error);

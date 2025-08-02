@@ -1,14 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import  ProductType from "../types/productTypes";;
 
-interface ProductType {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  category: string;
-  description: string;
-}
 
 const Product = () => {
   const { id } = useParams<{ id: string }>();
