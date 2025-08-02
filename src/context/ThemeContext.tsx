@@ -1,6 +1,8 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+// After:
+import { createContext, useContext, useEffect, useState } from "react";
+import type { ReactNode } from "react";
 
-type Theme = 'theme1' | 'theme2' | 'theme3';
+type Theme = "theme1" | "theme2" | "theme3";
 
 interface ThemeContextType {
   theme: Theme;
@@ -10,16 +12,16 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setThemeState] = useState<Theme>('theme1');
+  const [theme, setThemeState] = useState<Theme>("theme1");
 
   useEffect(() => {
-    const stored = localStorage.getItem('theme') as Theme;
+    const stored = localStorage.getItem("theme") as Theme;
     if (stored) setThemeState(stored);
   }, []);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem('theme', newTheme);
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
@@ -31,6 +33,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
-  if (!context) throw new Error('useTheme must be used within ThemeProvider');
+  if (!context) throw new Error("useTheme must be used within ThemeProvider");
   return context;
 };
