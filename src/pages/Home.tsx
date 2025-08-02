@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useTheme } from "../context/ThemeContext";
 import { useEffect, useState } from "react";
 interface Product {
   id: number;
@@ -11,7 +10,6 @@ interface Product {
 }
 
 const Home = () => {
-  const { theme } = useTheme();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   console.log(products);
