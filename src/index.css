@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply transition-colors duration-500 ease-in-out;
+}
+
+/* If using theme classes on <div className={theme}> */
+.theme1,
+.theme2,
+.theme3 {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Optional theme utility classes */
+.theme1 {
+  @apply bg-white text-gray-500 font-sans;
+}
+
+.theme2 {
+  @apply bg-gray-900 text-blue-900 font-serif;
+}
+
+.theme3 {
+  @apply bg-yellow-50 text-pink-800 font-pacifico;
+}
